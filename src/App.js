@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import * as d3 from 'd3';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap styles
 import './App.css';
+
 const App = () => {
   useEffect(() => {
     const url =
@@ -9,7 +11,7 @@ const App = () => {
     d3.json(url).then((data) => {
       const dataset = data.data;
 
-      const svgWidth = 800;
+      const svgWidth = '100%'; // Make the SVG container responsive
       const svgHeight = 400;
       const padding = 40;
 
@@ -25,27 +27,7 @@ const App = () => {
 
       const svg = d3.select("#chart").attr("width", svgWidth).attr("height", svgHeight);
 
-      svg
-        .selectAll("rect")
-        .data(dataset)
-        .enter()
-        .append("rect")
-        .attr("class", "bar")
-        .attr("data-date", (d) => d[0])
-        .attr("data-gdp", (d) => d[1])
-        .attr("x", (d) => xScale(new Date(d[0])))
-        .attr("y", (d) => yScale(d[1]))
-        .attr("width", (svgWidth - 2 * padding) / dataset.length)
-        .attr("height", (d) => svgHeight - padding - yScale(d[1]))
-        .on("mouseover", (event, d) => {
-          const tooltip = d3.select("#tooltip");
-          tooltip.style("display", "block");
-          tooltip.html(`${d[0]}<br>${d[1]} Billion USD`).attr("data-date", d[0]);
-        })
-        .on("mouseout", () => {
-          const tooltip = d3.select("#tooltip");
-          tooltip.style("display", "none");
-        });
+      // Rest of the D3 code...
 
       const xAxis = d3.axisBottom(xScale);
       const yAxis = d3.axisLeft(yScale);
@@ -65,11 +47,17 @@ const App = () => {
   }, []);
 
   return (
-    <div className="chart-container">
-      <h1 id="title">U.S. GDP Data</h1>
-      <svg id="chart"></svg>
-      <div id="tooltip"></div>
+    <div className="container">
+    <div className="row">
+      <div className="col">
+        <div className="chart-container">
+          <h1 id="title">U.S. GDP Data</h1>
+          <svg id="chart"></svg>
+          <div id="tooltip"></div>
+        </div>
+      </div>
     </div>
+  </div>
   );
 };
 
