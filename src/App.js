@@ -3,6 +3,7 @@ import * as d3 from 'd3';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
+
 const App = () => {
   useEffect(() => {
     const url =
@@ -11,7 +12,7 @@ const App = () => {
     d3.json(url).then((data) => {
       const dataset = data.data;
 
-      const svgWidth = window.innerWidth; // Define svgWidth
+      const svgWidth = 800;
       const svgHeight = 400;
       const padding = 40;
 
@@ -67,14 +68,21 @@ const App = () => {
   }, []);
 
   return (
+    
     <div className="container">
       <div className="row">
-        <div className="col">
-          <div className="chart-container">
-            <h1 id="title">U.S. GDP Data</h1>
-            <svg id="chart"></svg>
-            <div id="tooltip"></div>
-          </div>
+        <div className="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+          <h1 id="title">U.S. GDP Data</h1>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+          <svg id="chart"></svg>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+          <div id="tooltip"></div>
         </div>
       </div>
     </div>
@@ -82,3 +90,5 @@ const App = () => {
 };
 
 export default App;
+
+
