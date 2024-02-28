@@ -20,6 +20,7 @@ body {
   width: 100%;
   height: 400px;
   margin-top: 20px;
+  background-color: lightblue;
 }
 
 #tooltip {
@@ -31,44 +32,19 @@ body {
   display: none;
 }
 
-
-/* Styles for screens with a maximum width of 600px */
+/* Responsive Styles */
 @media only screen and (max-width: 600px) {
-  /* Adjust styles for smaller screens */
   .chart-container {
-    /* Add your responsive styles here */
     max-width: 90%;
     margin: 10px auto;
     padding: 10px;
   }
-
-  /* Add more styles as needed */
 }
 
-/* Styles for screens with a maximum width of 900px */
 @media only screen and (max-width: 900px) {
-  /* Adjust styles for medium-sized screens */
   .chart-container {
-    /* Add your responsive styles here */
     max-width: 80%;
     margin: 20px auto;
     padding: 20px;
   }
-
-  /* Add more styles as needed */
 }
-
-/* Styles for larger screens (default) */
-.chart-container {
-  max-width: 800px;
-  margin: 20px auto;
-  background-color: #ffffff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  padding: 20px;
-  line-height: 1.6;
-}
-
-/* Add more default styles as needed */
-
-

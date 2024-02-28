@@ -70,22 +70,23 @@ const App = () => {
   return (
     
     <div className="container">
-      <div className="row">
-        <div className="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-          <h1 id="title">U.S. GDP Data</h1>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-          <svg id="chart"></svg>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-          <div id="tooltip"></div>
-        </div>
-      </div>
+  <div className="row">
+    <div className="col-12">
+      <h1 id="title">U.S. GDP Data</h1>
     </div>
+  </div>
+  <div className="row">
+    <div className="col-12">
+      <svg id="chart"></svg>
+    </div>
+  </div>
+  <div className="row">
+    <div className="col-12">
+      <div id="tooltip"></div>
+    </div>
+  </div>
+</div>
+
   );
 };
 
